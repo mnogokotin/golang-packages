@@ -1,4 +1,4 @@
-package file2
+package file
 
 import (
 	"fmt"
@@ -6,7 +6,7 @@ import (
 	"os"
 )
 
-func getLastLine(f *os.File) string {
+func GetLastLine(f *os.File) string {
 	line := ""
 	var cursor int64 = 0
 	stat, _ := f.Stat()
