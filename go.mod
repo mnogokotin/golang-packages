@@ -1,6 +1,6 @@
 module github.com/mnogokotin/golang-packages
 
-go 1.21.6
+go 1.22.0
 
 require github.com/jinzhu/gorm v1.9.16
 
