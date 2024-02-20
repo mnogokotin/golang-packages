@@ -12,7 +12,7 @@ func GetConnectionUri() string {
 }
 
 type Postgres struct {
-	db *gorm.DB
+	Db *gorm.DB
 }
 
 func New(connectionUri string) (*Postgres, error) {
@@ -22,12 +22,12 @@ func New(connectionUri string) (*Postgres, error) {
 	}
 
 	return &Postgres{
-		db: db,
+		Db: db,
 	}, nil
 }
 
 func (p *Postgres) Close() {
-	if err := p.db.Close(); err != nil {
+	if err := p.Db.Close(); err != nil {
 		fmt.Printf("could not close postgres connection: %s", err)
 	}
 }
