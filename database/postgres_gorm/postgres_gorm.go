@@ -1,16 +1,22 @@
-package postgres
+package postgres_gorm
 
 import (
-	"database/sql"
 	"fmt"
+	"github.com/jinzhu/gorm"
+	_ "github.com/jinzhu/gorm/dialects/postgres"
+	"os"
 )
 
+func GetConnectionUri() string {
+	return os.Getenv("POSTGRES_CONNECTION_URI")
+}
+
 type Postgres struct {
-	db *sql.DB
+	db *gorm.DB
 }
 
 func New(connectionUri string) (*Postgres, error) {
-	db, err := sql.Open("postgres", connectionUri)
+	db, err := gorm.Open("postgres_gorm", connectionUri)
 	if err != nil {
 		return nil, err
 	}
