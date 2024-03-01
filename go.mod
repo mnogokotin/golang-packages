@@ -6,6 +6,7 @@ require (
 	github.com/fatih/color v1.16.0
 	github.com/go-playground/validator/v10 v10.18.0
 	github.com/jinzhu/gorm v1.9.16
+	go.mongodb.org/mongo-driver v1.14.0
 )
 
 require (
