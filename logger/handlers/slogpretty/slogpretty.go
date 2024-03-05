@@ -69,20 +69,20 @@ func (h *PrettyHandler) Handle(_ context.Context, r slog.Record) error {
 	var err error
 
 	if len(fields) > 0 {
-		b, err = json.MarshalIndent(fields, "", "  ")
+		b, err = json.Marshal(fields)
 		if err != nil {
 			return err
 		}
 	}
 
 	timeStr := r.Time.Format("[15:05:05.000]")
-	msg := color.CyanString(r.Message)
+	msg := color.GreenString(r.Message)
 
 	h.l.Println(
 		timeStr,
 		level,
 		msg,
-		color.WhiteString(string(b)),
+		color.CyanString(string(b)),
 	)
 
 	return nil

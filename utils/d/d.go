@@ -9,7 +9,7 @@ import (
 func Dnd(args ...any) {
 	for _, arg := range args {
 		farg := fmt.Sprintf("%+v", arg)
-		fmt.Println(color.GreenString(farg))
+		fmt.Println(color.CyanString(farg))
 	}
 	os.Exit(1)
 }
